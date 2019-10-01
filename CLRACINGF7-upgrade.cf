@@ -3,8 +3,11 @@
 # timer and DMA changes for this target. These will ensure that your
 # quad can receive telemetry frames on the motor signal lines.
 
-resource led 1 none
-resource motor 4 b01
+resource MOTOR 8 NONE
+resource LED_STRIP 1 NONE
+resource LED 1 NONE
+resource MOTOR 4 B01
+
 
 # set looptime to 4k to have enough computational time
 
@@ -18,6 +21,7 @@ set motor_pwm_protocol=DSHOT300
 # basic settings required to enable rpm filtering:
 
 set scheduler_optimize_rate=on
+set dshot_bitbang=off
 set dshot_burst=off
 set dshot_bidir=on
 
@@ -31,4 +35,3 @@ set debug_mode=gyro_scaled
 set dyn_notch_range = medium
 set dyn_notch_width_percent = 0
 set dyn_notch_q = 250
-
